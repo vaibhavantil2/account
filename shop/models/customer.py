@@ -266,11 +266,15 @@ class BaseCustomer(models.Model, metaclass=deferred.ForeignKeyBuilder):
     @property
     def is_authenticated(self):
         return self.recognized is CustomerState.REGISTERED
+    
+    @property
+    def is_forgot_password(self):
+        return self.recognized is CustomerState.IS_FORGOT_PASSWORD
 
     @property
     def is_recognized(self):
         """
-        Return True if the customer is associated with a User account.
+        Return True if the customer is associated with a User account or ask security question.
         Unrecognized customers have accessed the shop, but did not register
         an account nor declared themselves as guests.
         """
