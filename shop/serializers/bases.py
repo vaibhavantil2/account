@@ -19,7 +19,7 @@ class BaseCustomerSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = CustomerModel
-        fields = ['number', 'first_name', 'last_name', 'email']
+        fields = ['number', 'first_name', 'last_name', 'email', 'date_of_birth']
 
 
 class AvailabilitySerializer(serializers.Serializer):
