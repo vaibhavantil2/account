@@ -74,6 +74,7 @@ class User(AbstractUser):
         if self.email and get_user_model().objects.exclude(id=self.id).filter(is_active=True,
                                                                               email__exact=self.email).exists():
             if self.mother_name != UserManager.User.Mother_Name:
-                 raise ValidationError({'email': msg.format(email=self.email)}) 
-            msg = _("A customer with the e-mail address ‘{email}’ already exists.")
+                msg = _("A customer with the e-mail address ‘{email}’ is not authrized.")
+                raise ValidationError({'email': msg.format(email=self.email)}) 
+            msg = _("A customer with the e-mail address ‘{email}’ is not verified.")
             raise ValidationError({'email': msg.format(email=self.email)})
