@@ -55,6 +55,12 @@ class User(AbstractUser):
         if short_name:
             return short_name
         return self.email
+    
+    def get_security_check(self):
+        mother_name = super(User, self).get_mothers_name()
+        if mother_name:
+            return mother_name
+        return self.mother
 
     def validate_unique(self, exclude=None):
         """
@@ -67,5 +73,7 @@ class User(AbstractUser):
         super(User, self).validate_unique(exclude)
         if self.email and get_user_model().objects.exclude(id=self.id).filter(is_active=True,
                                                                               email__exact=self.email).exists():
+            if self.mother_name != UserManager.User.Mother_Name:
+                 raise ValidationError({'email': msg.format(email=self.email)}) 
             msg = _("A customer with the e-mail address ‘{email}’ already exists.")
             raise ValidationError({'email': msg.format(email=self.email)})
