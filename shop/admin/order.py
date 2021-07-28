@@ -58,7 +58,7 @@ class OrderPaymentInline(admin.TabularInline):
 
     def get_amount(self, obj):
         """Return amount using correct local format"""
-        return obj.amount
+        return obj.user_id.amount
     get_amount.short_description = pgettext_lazy('admin', "Amount Paid")
 
 
