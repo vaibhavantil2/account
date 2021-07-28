@@ -2,8 +2,7 @@
 from setuptools import setup, find_packages
 import shop
 
-with open('README.md', 'r') as fh:
-    long_description = fh.read()
+with open('README.md', 'r') as fh:    long_description = fh.read()
 
 REQUIREMENTS = [
     'Django>=2.1,<3.1',
