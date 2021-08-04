@@ -14,7 +14,7 @@ def set_defaults(config):
     config['plugins_with_extra_mixins'].setdefault('ShopReorderButtonPlugin', BootstrapUtilities(
         BootstrapUtilities.margins, BootstrapUtilities.floats,
     ))
-    config['plugins_with_extra_mixins'].setdefault('ShopCancelOrderButtonPlugin', BootstrapUtilities(
+    config['plugins_with_extra_mixins'].setdefault('ShopCancelButtonPlugin', BootstrapUtilities(
         BootstrapUtilities.margins, BootstrapUtilities.floats,
     ))
     config['plugins_with_extra_mixins'].setdefault('ShopProceedButton', BootstrapUtilities(
