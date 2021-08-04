@@ -47,10 +47,6 @@ class CheckoutSerializer(serializers.Serializer):
         form = form_class(initial=cart.extra, cart=cart)
         return form.as_text()
 
-    def get_payment_method_tag(self, form_class, cart):
-        form = form_class(initial=cart.extra, cart=cart)
-        return form.as_text()
-
     def get_extra_annotation_tag(self, form_class, cart):
         form = form_class(initial=cart.extra, cart=cart)
         return form.as_text()
