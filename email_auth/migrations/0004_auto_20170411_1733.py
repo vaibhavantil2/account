@@ -8,7 +8,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('email_auth', '0003_django110'),
+        ('email_auth', '${account_id}'),
     ]
 
     operations = []
