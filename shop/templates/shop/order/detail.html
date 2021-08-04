@@ -28,11 +28,7 @@
 	<div class="col-12 col-lg-6 my-2">
 		<div class="card">
 			<h5 class="card-header">{% trans "Billing Address" context "order" %}</h5>
-			<div class="card-body">
-				<pre class="card-text">{{ data.billing_address_text }}</pre>
-			</div>
-			<div class="card-footer text-primary">{% blocktrans with label=data.active_payment_method.label context "order" %}Payment Method: {{ label }}{% endblocktrans %}</div>
-		</div>
+			<div cla
 	</div>
 </div>
 {% endblock %}
