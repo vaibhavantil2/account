@@ -83,7 +83,6 @@ class OrderView(mixins.ListModelMixin, mixins.RetrieveModelMixin, mixins.UpdateM
         lapse = timezone.now() - self.last_order_lapse
         current_order = self.get_object()
         last_order = self.get_queryset().first()
-        return current_order.id == last_order.id and current_order.created_at > lapse
 
     @property
     def allowed_methods(self):
