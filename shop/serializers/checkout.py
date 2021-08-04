@@ -29,7 +29,6 @@ class CheckoutSerializer(serializers.Serializer):
     shipping_address_tag = SerializeFormAsTextField('ShippingAddressForm')
     billing_address_tag = SerializeFormAsTextField('BillingAddressForm')
     shipping_method_tag = SerializeFormAsTextField('ShippingMethodForm')
-    payment_tag = SerializeFormAsTextField('PaymentMethodForm')
     extra_annotation_tag = SerializeFormAsTextField('ExtraAnnotationForm')
 
     def get_customer_tag(self, form_class, cart):
