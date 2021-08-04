@@ -56,8 +56,7 @@
 	</div>
 	<div class="row dontsplit">
 		<div class="col-12 pt-3 border-top">
-			<p>{% trans "Payment Method" %}: <strong>{{ order.active_payment_method.label }}</strong></p>
-			<p>{% trans "Ordered on" %}: <strong>{{ order.created_at|date }}</strong></p>
+			<p>{% trans "on" %}: <strong>{{ order.created_at|date }}</strong></p>
 		</div>
 	</div>
 	{% endblock print-order-foot %}
