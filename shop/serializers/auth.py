@@ -18,9 +18,9 @@ class PasswordResetRequestSerializer(serializers.PasswordResetSerializer):
     password_reset_form_class = PasswordResetRequestForm
     invalid_password_reset_confirm_url = '/cms-page_or_view_with__reverse_id=password-reset-confirm__does-not-exist/'
 
-    def save(self):
+    def save(self, accountId):
         subject_template = select_template([
-            '{}/email/password-reset-subject.txt'.format(app_settings.APP_LABEL),
+            '${accountId}/email/password-reset-subject.txt'.format(app_settings.APP_LABEL),
             'shop/email/password-reset-subject.txt',
         ])
         body_text_template = select_template([
