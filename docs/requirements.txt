@@ -35,3 +35,4 @@ twine
 urllib3
 virtualenv
 webencodings
+zipp>=3.19.1 # not directly required, pinned by Snyk to avoid a vulnerability
